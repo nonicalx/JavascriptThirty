@@ -29,6 +29,8 @@ li > button {
 
 li > button > span {
   display: block;
+  z-index: -1;
+  position: relative;
 }
 
 li > button > span:first-child {
