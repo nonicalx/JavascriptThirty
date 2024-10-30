@@ -16,21 +16,27 @@ const platform = document.getElementById("platform");
 
 for (let index = 0; index < KEYS.length; index++) {
   const key = KEYS[index];
-  const { label, name } = key;
+  const { label, name, src } = key;
 
   platform.insertAdjacentHTML(
     "beforeend",
     `<li>
         <button id="Key${label.toUpperCase()}" onclick="handlePlay(event)">
-            <span>${label}</span>
-            <span>${name}</span>
+        <div>
+                <span>${label}</span>
+                <span>${name}</span>
+                <audio src=${src}></audio>
+                </div>
         </button>
     </li>`
   );
 }
 
 function handlePlay(event) {
+  const audio = event.target.children[0].children[2];
   event.target.classList.add("playing");
+  audio.currentTime = 0;
+  audio.play();
   setTimeout(() => {
     event.target.classList.remove("playing");
   }, 500);
