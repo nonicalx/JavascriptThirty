@@ -19,6 +19,8 @@ section {
   height: calc(100vw * 0.2);
   border-radius: 50%;
   position: relative;
+  transform: rotate(90deg);
+  padding: 1rem;
 }
 div {
   background-color: black;
@@ -26,7 +28,6 @@ div {
   width: 50%;
   position: absolute;
   top: 50%;
-  transform: rotate(90deg);
   transform-origin: right;
   border-radius: 2px;
 }
@@ -34,16 +35,15 @@ div {
 div#sec-hand {
   animation-name: tic;
   animation-duration: 60s;
-  /* animation-timing-function: step-start; */
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   height: 2px;
+  background-color: red;
 }
 
 div#min-hand {
   animation-name: tic;
   animation-duration: 3600s;
-  /* animation-timing-function: step-start; */
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   height: 3px;
@@ -51,18 +51,14 @@ div#min-hand {
 
 div#hr-hand {
   animation-name: tic;
-  animation-duration: 86400s;
-  /* animation-timing-function: step-start; */
+  animation-duration: 43200s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   height: 5px;
 }
 
 @keyframes tic {
-  from {
-    transform: rotate(90deg);
-  }
   to {
-    transform: rotate(450deg);
+    transform: rotate(360deg);
   }
 }
