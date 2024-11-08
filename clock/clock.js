@@ -18,6 +18,8 @@ if (hr === 12) {
 
 if (hr > 12) {
   hr_deg = (hr - 12) * 30;
+} else {
+  hr_deg = hr * 30;
 }
 
 min_deg = min * 6;
